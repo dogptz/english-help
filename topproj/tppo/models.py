@@ -1,4 +1,6 @@
 from django.db import models
+from django import forms
+
 
 # Create your models here.
 
@@ -8,7 +10,7 @@ class theory(models.Model):
 	text = models.TextField() 
 
 class users(models.Model):
-	name = models.CharField(max_length=20)
+	user = models.CharField(max_length=20)
 	password = models.CharField(max_length=20)
 
 class Question(models.Model):
@@ -25,3 +27,6 @@ class Choice(models.Model):
 	poper = models.IntegerField(default=0)
 	def __str__(self):
 		return self.choice_text
+
+
+
