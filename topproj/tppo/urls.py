@@ -9,8 +9,6 @@ urlpatterns = [
     path('', views.avtoriz, name='home'),
     path('theme/', views.first, name='home'),
     path('first.html', views.first),
-    path('theme/1/', views.two, {'num': "1"}),
-    path('theme/2/', views.two, {'num': "2"}),
-    path('theme/3/', views.two, {'num': "3"}),
+    path('theme/<int:num>/', views.two),
     path('theme/1/test/', views.vote),
 ]

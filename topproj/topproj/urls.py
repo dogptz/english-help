@@ -22,13 +22,12 @@ from django.conf.urls import  include, url
 
 
 urlpatterns = [
-    path('register/', views.regist),
     path('admin/', admin.site.urls),
+    path('register/', views.regist),
     path('', views.avtoriz, name='home'),
     path('theme/', views.first, name='home'),
-    path('first.html', views.first),
-    path('theme/1/', views.two, {'num': "1"}),
-    path('theme/2/', views.two, {'num': "2"}),
-    path('theme/3/', views.two, {'num': "3"}),
-    re_path(r'^theme/1/test/', views.vote),
+    path('theme/<int:num>/', views.two),
+    path('grammar/', views.grammarpage),
+    path('grammar/<int:num>/', views.grammarpa),
+    path('theme/1/test/', views.vote),
 ]

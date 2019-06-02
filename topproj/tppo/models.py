@@ -4,6 +4,16 @@ from django import forms
 
 # Create your models here.
 
+class theme_new(models.Model):
+
+	theme_name = models.TextField()
+
+class grammar(models.Model):
+
+	name = models.TextField()
+	text = models.TextField()
+
+
 class theory(models.Model):
 
 	name = models.CharField(max_length=20)

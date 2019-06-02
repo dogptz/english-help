@@ -92,19 +92,16 @@
   <div class="wrapper">
     <header class="header"><h1 align="left" style="color:#0D3E05;padding-top:1em;">English. Help!<button style="background-color:#008000; float:right; margin-right: 3em; padding:1em; padding-left:2em; padding-right:2em;border-radius: 10px; border-bottom-color:#0D3E05;">Exit</button></h1>
     </header>
-    <main class="content" style="padding-left:5em;padding-right:5em;"><h2 align="left" style="margin-top: 1em; color: #4C160C;">Themes </h2>
+    <main class="content" style="padding-left:5em;padding-right:5em;"><h2 align="left" style="margin-top: 1em; color: #4C160C;"> Grammar </h2>
       <table border="0" cellspacing="50" align="center">
         
-          {% for i in count %}
+          {% for i in counter %}
             <tr>
-              <a href="{{i.id}}/" class="button">{{i.theme_name}}</a>
+              <a href="{{i.id}}/" class="button">{{i.name}}</a>
             </tr>
           {% endfor %}
       </table>
     </main>
-  </div>
-  <div>
-    <a href="/grammar/" class="button"> Grammar </a> 
   </div>
   <footer class="footer">
     Questions and answers: <address><a href="mailto:kirillxyikorolev98@bk.ru">kirillkorolev98@bk.ru</a></address>

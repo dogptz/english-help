@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse, Http404, HttpResponseRedirect
-from .models import theory
+from .models import theory, theme_new, grammar
 from .models import users , Question, Choice
 from django.shortcuts import get_object_or_404
 from .forms import UserForm, Registration
@@ -15,13 +15,20 @@ from django.contrib.auth import base_user
 
 
 def first(request):
-	test = get_object_or_404(theory, id=1)
-	return render(request,"first.html", {"text": test})
+	count = theme_new.objects.all()
+	return render(request,"first.html", {"count": count})
 
 def two(request, num):
 	test = get_object_or_404(theory, id=num)
 	return render(request,"two.html", {"text": test})
 
+def grammarpage(request):
+	counter = grammar.objects.all()
+	return render(request,"grammarpage.html", {"counter": counter})
+
+def grammarpa(request, num):
+	test = get_object_or_404(grammar, id=num)
+	return render(request,"two.html", {"text": test})
 
 def index(request):
 	if request.method == "POST":
